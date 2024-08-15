@@ -33,4 +33,31 @@ class UserTest < ActiveSupport::TestCase
     user.save
     assert_equal email.downcase, user.email
   end
+
+  test "should confirm user" do
+    @user.confirm!
+
+    assert @user.confirmed?
+  end
+
+  test "should generate confirmation token" do
+    assert @user.generate_confirmation_token
+  end
+
+  test "should check if user is unconfirmed" do
+    @user.confirmed_at = nil
+    assert @user.unconfirmed?
+  end
+
+  test "should check if user is confirmed" do
+    @user.confirm!
+
+    assert_not @user.unconfirmed?
+  end
+
+  test "should not save user without password" do
+    @user.password = nil
+
+    assert_not @user.save
+  end
 end

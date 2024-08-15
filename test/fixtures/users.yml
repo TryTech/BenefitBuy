@@ -2,6 +2,10 @@
 
 one:
   email: admin@gmail.com
+  confirmed_at: <%= Time.now %>
+  password_digest: <%= BCrypt::Password.create('password') %>
 
 two:
   email: user@gmail.com
+  confirmed_at: <%= Time.now %>
+  password_digest: <%= BCrypt::Password.create('password') %>
