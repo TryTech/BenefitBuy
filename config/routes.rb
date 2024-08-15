@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
 
-  resources :users, only: %i[new create]
+  post "sign_up", to: "users#create"
+  get "sign_up", to: "users#new"
 end
