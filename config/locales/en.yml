@@ -33,6 +33,8 @@ en:
       subject: 'Confirmation instructions'
       body: 'Click here to confirm your email'
   users:
+    authentication:
+      signed_in: 'You are already logged in.'
     confirmations: 
       success: 'Check your email for confirmation instructions.'
       error: 'We could not find a user with that email or that email has already been confirmed.'

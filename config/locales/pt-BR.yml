@@ -5,6 +5,8 @@ pt-BR:
         subject: 'Instruções de confirmação'
         body: 'Clique aqui para confirmar seu e-mail'
   users:
+    authentication:
+      signed_in: 'Você já está logado.'
     confirmations:
       success: 'Verifique seu e-mail para obter instruções de confirmação.'
       error: 'Não foi possível encontrar um usuário com esse e-mail ou esse e-mail já foi confirmado.'
