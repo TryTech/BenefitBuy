@@ -1,4 +1,6 @@
 class ConfirmationsController < ApplicationController
+  before_action :redirect_if_authenticated, only: [ :new, :create ]
+
   def create
     @user = User.find_by_email(params[:user][:email].downcase)
 
@@ -15,6 +17,7 @@ class ConfirmationsController < ApplicationController
 
     if @user.present?
       @user.confirm!
+      login @user
       redirect_to root_path, notice: I18n.t("users.confirmations.confirmed")
     else
       redirect_to new_confirmation_path, alert: I18n.t("users.confirmations.invalid")

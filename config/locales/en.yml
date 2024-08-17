@@ -28,6 +28,14 @@
 #       enabled: "ON"
 
 en:
+  sign_in: "Sign in"
+  sessions:
+    create:
+      unconfirmed: "Incorrect email or password."
+      alert: "Invalid email or password."
+      notice: "Signed in successfully."
+    destroy:
+      notice: "Signed out successfully."
   user_mailer:
     confirmation:
       subject: 'Confirmation instructions'

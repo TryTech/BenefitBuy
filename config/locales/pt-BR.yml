@@ -1,5 +1,8 @@
 ---
 pt-BR:
+  sessions:
+      destroy:
+        notice: "Sessão encerrada com sucesso."
   user_mailer:
       confirmation:
         subject: 'Instruções de confirmação'
