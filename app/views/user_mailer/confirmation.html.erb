@@ -1,0 +1,3 @@
+<h1><%= I18n.t('user_mailer.confirmation.subject') %></h1>
+
+<%= link_to I18n.t('user_mailer.confirmation.body'), edit_confirmation_url(@confirmation_token) %>

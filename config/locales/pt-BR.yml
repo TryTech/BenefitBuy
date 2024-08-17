@@ -1,6 +1,15 @@
 ---
 pt-BR:
+  user_mailer:
+      confirmation:
+        subject: 'Instruções de confirmação'
+        body: 'Clique aqui para confirmar seu e-mail'
   users:
+    confirmations:
+      success: 'Verifique seu e-mail para obter instruções de confirmação.'
+      error: 'Não foi possível encontrar um usuário com esse e-mail ou esse e-mail já foi confirmado.'
+      confirmed: 'Sua conta foi confirmada.'
+      invalid: 'Token de confirmação inválido.'
     create:
       success: 'Usuário criado com sucesso'
       error: 'Erro ao criar usuário'

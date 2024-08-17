@@ -60,4 +60,16 @@ class UserTest < ActiveSupport::TestCase
 
     assert_not @user.save
   end
+
+  test "should send confirmation email" do
+    assert @user.send_confirmation_email!
+  end
+
+  test "should have MAILER_FROM_EMAIL constant" do
+    assert User::MAILER_FROM_EMAIL
+  end
+
+  test "should have CONFIRMATION_TOKEN_EXPIRATION constant" do
+    assert User::CONFIRMATION_TOKEN_EXPIRATION
+  end
 end

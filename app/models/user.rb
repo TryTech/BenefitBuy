@@ -1,11 +1,17 @@
 class User < ApplicationRecord
   CONFIRMATION_TOKEN_EXPIRATION = 10.minutes.freeze
+  MAILER_FROM_EMAIL = 'no-reply-users@benefit.com'.freeze
 
   has_secure_password
 
   before_save :downcase_email
 
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, presence: true, uniqueness: true
+
+  def send_confirmation_email!
+    confirmation_token = generate_confirmation_token
+    UserMailer.confirmation(self, confirmation_token).deliver_now
+  end
 
   def confirm!
     update_columns(confirmed_at: Time.current)

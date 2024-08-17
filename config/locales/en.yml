@@ -28,7 +28,16 @@
 #       enabled: "ON"
 
 en:
+  user_mailer:
+    confirmation:
+      subject: 'Confirmation instructions'
+      body: 'Click here to confirm your email'
   users:
+    confirmations: 
+      success: 'Check your email for confirmation instructions.'
+      error: 'We could not find a user with that email or that email has already been confirmed.'
+      confirmed: 'Your account has been confirmed.'
+      invalid: 'Invalid confirmation token.'
     create:
       success: 'User created successfully'
       error: 'Error creating user'
