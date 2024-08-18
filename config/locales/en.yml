@@ -40,3 +40,9 @@ en:
     create:
       success: 'User created successfully'
       error: 'Error creating user'
+    destroy:
+      success: 'Your account has been deleted.'
+    update:
+      email_changed: 'You will receive an email with instructions on how to confirm your new email address.'
+      success: 'Account updated.'
+      invalid_password: 'Incorrect password.'
