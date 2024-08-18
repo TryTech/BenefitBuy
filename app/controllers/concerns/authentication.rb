@@ -7,7 +7,18 @@ module Authentication
     helper_method :user_signed_in?
   end
 
+  def forget(user)
+    cookies.delete :remember_token
+    user.regenerate_remember_token
+  end
+
+  def remember(user)
+    user.regenerate_remember_token
+    cookies.permanent.encrypted[:remember_token] = user.remember_token
+  end
+
   def authenticate_user!
+    store_location
     redirect_to login_path, alert: I18n.t("users.authentication.unauthenticated") unless user_signed_in?
   end
 
@@ -27,10 +38,18 @@ module Authentication
   private
 
   def current_user
-    Current.user ||= session[:current_user_id] && User.find_by(id: session[:current_user_id])
+    Current.user ||= if session[:current_user_id].present?
+      User.find_by(id: session[:current_user_id])
+    elsif cookies.permanent.encrypted[:remember_token].present?
+      User.find_by(remember_token: cookies.permanent.encrypted[:remember_token])
+    end
   end
 
   def user_signed_in?
     Current.user.present?
+  end
+
+  def store_location
+    session[:user_return_to] = request.original_url if request.get? && request.local?
   end
 end

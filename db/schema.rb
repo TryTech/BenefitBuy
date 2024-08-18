@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_08_18_164028) do
+ActiveRecord::Schema[7.2].define(version: 2024_08_18_174051) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -56,7 +56,9 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_18_164028) do
     t.datetime "confirmed_at"
     t.string "password_digest", null: false
     t.string "unconfirmed_email"
+    t.string "remember_token", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["remember_token"], name: "index_users_on_remember_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
