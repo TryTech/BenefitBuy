@@ -1,30 +1,19 @@
 ---
 pt-BR:
-  sessions:
-      destroy:
-        notice: "Sessão encerrada com sucesso."
-  user_mailer:
-      confirmation:
-        subject: 'Instruções de confirmação'
-        body: 'Clique aqui para confirmar seu e-mail'
-  users:
-    authentication:
-      signed_in: 'Você já está logado.'
-    confirmations:
-      success: 'Verifique seu e-mail para obter instruções de confirmação.'
-      error: 'Não foi possível encontrar um usuário com esse e-mail ou esse e-mail já foi confirmado.'
-      confirmed: 'Sua conta foi confirmada.'
-      invalid: 'Token de confirmação inválido.'
-    create:
-      success: 'Usuário criado com sucesso'
-      error: 'Erro ao criar usuário'
+  active_sessions:
+    destroy:
+      success: Sessão destruída.
+      success_with_sign_out: Sessão destruída. Você está desconectado.
+    destroy_all:
+      success: Todas as sessões destruídas.
+      success_with_sign_out: Todas as sessões destruídas. Você está desconectado.
   activerecord:
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
         restrict_dependent_destroy:
-          has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
+          has_one: Não é possível excluir o registro pois existe um %{record} dependente
   date:
     abbr_day_names:
     - dom
@@ -93,36 +82,36 @@ pt-BR:
         one: quase %{count} ano
         other: quase %{count} anos
       half_a_minute: meio minuto
-      less_than_x_seconds:
-        one: menos de %{count} segundo
-        other: menos de %{count} segundos
       less_than_x_minutes:
         one: menos de um minuto
         other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de %{count} segundo
+        other: menos de %{count} segundos
       over_x_years:
         one: mais de %{count} ano
         other: mais de %{count} anos
-      x_seconds:
-        one: "%{count} segundo"
-        other: "%{count} segundos"
-      x_minutes:
-        one: "%{count} minuto"
-        other: "%{count} minutos"
       x_days:
         one: "%{count} dia"
         other: "%{count} dias"
+      x_minutes:
+        one: "%{count} minuto"
+        other: "%{count} minutos"
       x_months:
         one: "%{count} mês"
         other: "%{count} meses"
+      x_seconds:
+        one: "%{count} segundo"
+        other: "%{count} segundos"
       x_years:
         one: "%{count} ano"
         other: "%{count} anos"
     prompts:
-      second: Segundo
-      minute: Minuto
-      hour: Hora
       day: Dia
+      hour: Hora
+      minute: Minuto
       month: Mês
+      second: Segundo
       year: Ano
   errors:
     format: "%{attribute} %{message}"
@@ -229,6 +218,27 @@ pt-BR:
     precision:
       format:
         delimiter: "."
+  passwords:
+    confirm_first: Por favor, confirme seu endereço de e-mail primeiro.
+    create:
+      error: Se esse usuário existir, enviamos instruções para o e-mail dele.
+      success: Se esse usuário existir, enviamos instruções para o e-mail dele.
+    edit:
+      error: Token inválido ou expirado.
+    reset_password: Redefinir senha
+    unconfirmed: Você deve confirmar seu e-mail antes de poder fazer login.
+    update:
+      error: Token inválido ou expirado.
+      success: Sua senha foi alterada com sucesso. Agora você está conectado.
+    update_password: Atualizar senha
+  sessions:
+    create:
+      alert: E-mail ou senha inválidos.
+      notice: Login efetuado com sucesso.
+      unconfirmed: E-mail ou senha incorretos.
+    destroy:
+      notice: Sessão encerrada com sucesso.
+  sign_in: Entrar
   support:
     array:
       last_word_connector: " e "
@@ -241,3 +251,31 @@ pt-BR:
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
     pm: pm
+  user_mailer:
+    confirmation:
+      body: Clique aqui para confirmar seu e-mail
+      subject: Instruções de confirmação
+    password_reset:
+      body: Clique aqui para redefinir sua senha
+      subject: Instruções para redefinir a senha
+  users:
+    authentication:
+      required_identifier: Um ou mais argumentos do localizador são necessários
+      required_password: Um ou mais argumentos de senha são necessários
+      signed_in: Você já está logado.
+      unauthenticated: Você precisa fazer login ou se inscrever antes de continuar.
+    confirmations:
+      confirmed: Sua conta foi confirmada.
+      error: Não foi possível encontrar um usuário com esse e-mail ou esse e-mail já foi confirmado.
+      invalid: Token de confirmação inválido.
+      something_wrong: Algo deu errado
+      success: Verifique seu e-mail para obter instruções de confirmação.
+    create:
+      error: Erro ao criar usuário
+      success: Usuário criado com sucesso
+    destroy:
+      success: Sua conta foi excluída.
+    update:
+      email_changed: Você receberá um e-mail com instruções sobre como confirmar seu novo endereço de e-mail.
+      invalid_password: Senha incorreta.
+      success: Conta atualizada.
