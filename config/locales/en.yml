@@ -37,6 +37,9 @@ en:
     destroy:
       notice: "Signed out successfully."
   user_mailer:
+    password_reset: 
+      subject: 'Password Reset Instructions'
+      body: 'Click here to reset your password'
     confirmation:
       subject: 'Confirmation instructions'
       body: 'Click here to confirm your email'
