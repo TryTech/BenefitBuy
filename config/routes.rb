@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   get "login", to: "sessions#new"
 
   resources :confirmations, only: %i[create edit new], param: :confirmation_token
+  resources :passwords, only: %i[ create, edit, new, update ], param: :password_reset_token
 end
