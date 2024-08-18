@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   before_action :authenticate_user!, only: [ :destroy ]
 
   def create
-    @user = User.find_by(email: params[:user][:email].downcase)
+    @user = User.authenticate_by(email: params[:user][:email].downcase, password: params[:user][:password])
 
     if @user
       if @user.unconfirmed?

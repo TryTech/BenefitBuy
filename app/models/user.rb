@@ -14,6 +14,21 @@ class User < ApplicationRecord
   before_save :downcase_email
   before_save :downcase_unconfirmed_email
 
+  def self.authenticate_by(attributes)
+    passwords, identifiers = attributes.to_h.partition do |name, value|
+      !has_attribute?(name) && has_attribute?("#{name}_digest")
+    end.map(&:to_h)
+
+    raise ArgumentError, I18n.t("users.authentication.required_password") if passwords.empty?
+    raise ArgumentError, I18n.t("users.authentication.required_identifier") if identifiers.empty?
+    if (record = find_by(identifiers))
+      record if passwords.count { |name, value| record.public_send(:"authenticate_#{name}", value) } == passwords.size
+    else
+      new(passwords)
+      nil
+    end
+  end
+
   def generate_password_reset_token
     signed_id expires_in: PASSWORD_RESET_TOKEN_EXPIRATION, purpose: :reset_password
   end

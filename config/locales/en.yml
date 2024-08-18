@@ -29,6 +29,8 @@ en:
       body: 'Click here to confirm your email'
   users:
     authentication:
+      required_password: 'One or more password arguments are required'
+      required_identifier: 'One or more finder arguments are required'
       signed_in: 'You are already logged in.'
       unauthenticated: 'You need to sign in or sign up before continuing.'
     confirmations: 
