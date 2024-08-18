@@ -16,9 +16,12 @@ class ConfirmationsController < ApplicationController
     @user = User.find_signed(params[:confirmation_token], purpose: :confirm_email)
 
     if @user.present?
-      @user.confirm!
-      login @user
-      redirect_to root_path, notice: I18n.t("users.confirmations.confirmed")
+      if @user.confirm!
+        login @user
+        redirect_to root_path, notice: I18n.t("users.confirmations.confirmed")
+      else
+        redirect_to new_confirmation_path, alert: I18n.t("users.confirmations.something_wrong")
+      end
     else
       redirect_to new_confirmation_path, alert: I18n.t("users.confirmations.invalid")
     end

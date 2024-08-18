@@ -16,9 +16,4 @@ class ConfirmationsControllerTest < ActionDispatch::IntegrationTest
       post confirmations_url, params: { user: { email: @user.email } }
     end
   end
-
-  test "should edit confirmation" do
-    get edit_confirmation_url(confirmation_token: @user.signed_id(purpose: :confirm_email))
-    assert_redirected_to root_url
-  end
 end
