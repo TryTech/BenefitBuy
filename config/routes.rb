@@ -24,4 +24,9 @@ Rails.application.routes.draw do
 
   resources :confirmations, only: %i[create edit new], param: :confirmation_token
   resources :passwords, only: %i[ create, edit, new, update ], param: :password_reset_token
+  resources :active_sessions, only: %i[ destroy ] do
+    collection do
+      delete "destroy_all"
+    end
+  end
 end

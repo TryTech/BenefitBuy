@@ -1,4 +1,11 @@
 en:
+  active_sessions:
+    destroy:
+      success_with_sign_out: 'Session destroyed. You are now signed out.'
+      success: 'Session destroyed.'
+    destroy_all:
+      success_with_sign_out: 'All sessions destroyed. You are now signed out.'
+      success: 'All sessions destroyed.'
   passwords:
     update_password: 'Update password'
     reset_password: 'Reset password'

@@ -2,6 +2,8 @@
 
 one:
   user: one
+  remember_token: <%= SecureRandom.urlsafe_base64 %>
 
 two:
   user: two
+  remember_token: <%= SecureRandom.urlsafe_base64 %>

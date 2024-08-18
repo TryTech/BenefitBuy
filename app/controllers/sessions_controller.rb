@@ -8,14 +8,11 @@ class SessionsController < ApplicationController
     if @user
       if @user.unconfirmed?
         redirect_to new_confirmation_path, alert: I18n.t("sessions.create.unconfirmed")
-      elsif @user.authenticate(params[:user][:password])
-        after_login_path = session[:user_return_to] || root_path
-        login @user
-        remember @user if params[:user][:remember_me] == "1"
-        redirect_to after_login_path, notice: I18n.t("sessions.create.notice")
       else
-        flash.now[:alert] = I18n.t("sessions.create.alert")
-        render :new, status: :unprocessable_entity
+        after_login_path = session[:user_return_to] || root_path
+        active_session = login @user
+        remember(active_session) if params[:user][:remember_me] == "1"
+        redirect_to after_login_path, notice: I18n.t("sessions.create.notice")
       end
     else
       flash.now[:alert] = I18n.t("sessions.create.alert")
@@ -28,7 +25,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    forget current_user
+    forget_active_session
     logout
     redirect_to root_path, notice: I18n.t("sessions.destroy.notice")
   end
