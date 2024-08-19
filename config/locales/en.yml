@@ -1,57 +1,56 @@
+---
 en:
   active_sessions:
     destroy:
-      success_with_sign_out: 'Session destroyed. You are now signed out.'
-      success: 'Session destroyed.'
+      success: Session destroyed.
+      success_with_sign_out: Session destroyed. You are now signed out.
     destroy_all:
-      success_with_sign_out: 'All sessions destroyed. You are now signed out.'
-      success: 'All sessions destroyed.'
+      success_with_sign_out: All sessions destroyed. You are now signed out.
   passwords:
-    update_password: 'Update password'
-    reset_password: 'Reset password'
-    unconfirmed: 'You must confirm your email before you can sign in.'
-    confirm_first: "Please confirm your email address first."
+    confirm_first: Please confirm your email address first.
     create:
-      success: "If that user exists we've sent instructions to their email."
-      error: "If that user exists we've sent instructions to their email."
+      error: If that user exists we've sent instructions to their email.
+      success: If that user exists we've sent instructions to their email.
     edit:
-      error: "Invalid or expired token."
+      error: Invalid or expired token.
+    reset_password: Reset password
+    unconfirmed: You must confirm your email before you can sign in.
     update:
-      success: "Your password was changed successfully. You are now signed in."
-      error: "Invalid or expired token."
-  sign_in: "Sign in"
+      error: Invalid or expired token.
+      success: Your password was changed successfully. You are now signed in.
+    update_password: Update password
   sessions:
     create:
-      unconfirmed: "Incorrect email or password."
-      alert: "Invalid email or password."
-      notice: "Signed in successfully."
+      alert: Invalid email or password.
+      notice: Signed in successfully.
+      unconfirmed: Incorrect email or password.
     destroy:
-      notice: "Signed out successfully."
+      notice: Signed out successfully.
+  sign_in: Sign in
   user_mailer:
-    password_reset: 
-      subject: 'Password Reset Instructions'
-      body: 'Click here to reset your password'
     confirmation:
-      subject: 'Confirmation instructions'
-      body: 'Click here to confirm your email'
+      body: Click here to confirm your email
+      subject: Confirmation instructions
+    password_reset:
+      body: Click here to reset your password
+      subject: Password Reset Instructions
   users:
     authentication:
-      required_password: 'One or more password arguments are required'
-      required_identifier: 'One or more finder arguments are required'
-      signed_in: 'You are already logged in.'
-      unauthenticated: 'You need to sign in or sign up before continuing.'
-    confirmations: 
-      success: 'Check your email for confirmation instructions.'
-      error: 'We could not find a user with that email or that email has already been confirmed.'
-      confirmed: 'Your account has been confirmed.'
-      invalid: 'Invalid confirmation token.'
-      something_wrong: 'Something went wrong'
+      required_identifier: One or more finder arguments are required
+      required_password: One or more password arguments are required
+      signed_in: You are already logged in.
+      unauthenticated: You need to sign in or sign up before continuing.
+    confirmations:
+      confirmed: Your account has been confirmed.
+      error: We could not find a user with that email or that email has already been confirmed.
+      invalid: Invalid confirmation token.
+      something_wrong: Something went wrong
+      success: Check your email for confirmation instructions.
     create:
-      success: 'User created successfully'
-      error: 'Error creating user'
+      success: User created successfully
     destroy:
-      success: 'Your account has been deleted.'
+      success: Your account has been deleted.
     update:
-      email_changed: 'You will receive an email with instructions on how to confirm your new email address.'
-      success: 'Account updated.'
-      invalid_password: 'Incorrect password.'
+      email_changed: You will receive an email with instructions on how to confirm your new email address.
+      invalid_password: Incorrect password.
+      success: Account updated.
