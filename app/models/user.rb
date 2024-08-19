@@ -13,6 +13,8 @@ class User < ApplicationRecord
   before_save :downcase_email
   before_save :downcase_unconfirmed_email
 
+  has_many :active_sessions, dependent: :destroy
+
   def self.authenticate_by(attributes)
     passwords, identifiers = attributes.to_h.partition do |name, value|
       !has_attribute?(name) && has_attribute?("#{name}_digest")
