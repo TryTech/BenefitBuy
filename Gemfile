@@ -50,14 +50,20 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "i18n-tasks", "~> 1.0.14"
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "simplecov", require: false
 end
 
 gem "litestack", "0.4.4"
 
 gem "css-zero", "~> 0.0.29"
+
+gem "bcrypt", "~> 3.1"
+
+gem "easy_translate", "~> 0.5.1"

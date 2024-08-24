@@ -1,0 +1,56 @@
+---
+pt-BR:
+  active_sessions:
+    destroy:
+      success: Sessão destruída.
+      success_with_sign_out: Sessão destruída. Você está desconectado.
+    destroy_all:
+      success_with_sign_out: Todas as sessões destruídas. Você está desconectado.
+  passwords:
+    confirm_first: Por favor, confirme seu endereço de e-mail primeiro.
+    create:
+      error: Se esse usuário existir, enviamos instruções para o e-mail dele.
+      success: Se esse usuário existir, enviamos instruções para o e-mail dele.
+    edit:
+      error: Token inválido ou expirado.
+    reset_password: Redefinir senha
+    unconfirmed: Você deve confirmar seu e-mail antes de poder fazer login.
+    update:
+      error: Token inválido ou expirado.
+      success: Sua senha foi alterada com sucesso. Agora você está conectado.
+    update_password: Atualizar senha
+  sessions:
+    create:
+      alert: E-mail ou senha inválidos.
+      notice: Login efetuado com sucesso.
+      unconfirmed: E-mail ou senha incorretos.
+    destroy:
+      notice: Desconectado com sucesso.
+  sign_in: Entrar
+  user_mailer:
+    confirmation:
+      body: Clique aqui para confirmar seu e-mail
+      subject: Instruções de confirmação
+    password_reset:
+      body: Clique aqui para redefinir sua senha
+      subject: Instruções para redefinir a senha
+  users:
+    authentication:
+      required_identifier: Um ou mais argumentos do localizador são necessários
+      required_password: Um ou mais argumentos de senha são necessários
+      signed_in: Você já está logado.
+      unauthenticated: Você precisa fazer login ou se inscrever antes de continuar.
+    confirmations:
+      confirmed: Sua conta foi confirmada.
+      error: Não conseguimos encontrar um usuário com esse e-mail ou esse e-mail já foi confirmado.
+      invalid: Token de confirmação inválido.
+      something_wrong: Algo deu errado
+      success: Verifique seu e-mail para obter instruções de confirmação.
+    create:
+      success: Usuário criado com sucesso
+    destroy:
+      success: Sua conta foi excluída.
+    update:
+      email_changed: Você receberá um e-mail com instruções sobre como confirmar seu novo endereço de e-mail.
+      invalid_password: Senha incorreta.
+      success: Conta atualizada.

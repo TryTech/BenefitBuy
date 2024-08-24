@@ -1,31 +1,56 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
+---
 en:
-  hello: "Hello world"
+  active_sessions:
+    destroy:
+      success: Session destroyed.
+      success_with_sign_out: Session destroyed. You are now signed out.
+    destroy_all:
+      success_with_sign_out: All sessions destroyed. You are now signed out.
+  passwords:
+    confirm_first: Please confirm your email address first.
+    create:
+      error: If that user exists we've sent instructions to their email.
+      success: If that user exists we've sent instructions to their email.
+    edit:
+      error: Invalid or expired token.
+    reset_password: Reset password
+    unconfirmed: You must confirm your email before you can sign in.
+    update:
+      error: Invalid or expired token.
+      success: Your password was changed successfully. You are now signed in.
+    update_password: Update password
+  sessions:
+    create:
+      alert: Invalid email or password.
+      notice: Signed in successfully.
+      unconfirmed: Incorrect email or password.
+    destroy:
+      notice: Signed out successfully.
+  sign_in: Sign in
+  user_mailer:
+    confirmation:
+      body: Click here to confirm your email
+      subject: Confirmation instructions
+    password_reset:
+      body: Click here to reset your password
+      subject: Password Reset Instructions
+  users:
+    authentication:
+      required_identifier: One or more finder arguments are required
+      required_password: One or more password arguments are required
+      signed_in: You are already logged in.
+      unauthenticated: You need to sign in or sign up before continuing.
+    confirmations:
+      confirmed: Your account has been confirmed.
+      error: We could not find a user with that email or that email has already been confirmed.
+      invalid: Invalid confirmation token.
+      something_wrong: Something went wrong
+      success: Check your email for confirmation instructions.
+    create:
+      success: User created successfully
+    destroy:
+      success: Your account has been deleted.
+    update:
+      email_changed: You will receive an email with instructions on how to confirm your new email address.
+      invalid_password: Incorrect password.
+      success: Account updated.
