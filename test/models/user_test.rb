@@ -160,4 +160,22 @@ class UserTest < ActiveSupport::TestCase
 
     assert @user.confirmed?
   end
+
+  test "should user has many orders dependent destroy" do
+    assert_difference("Order.count", -1) do
+      @user.destroy
+    end
+  end
+
+  test "should user has many addresses dependent destroy" do
+    assert_difference("Address.count", -1) do
+      @user.destroy
+    end
+  end
+
+  test "should user has many products dependent destroy" do
+    assert_difference("Product.count", -1) do
+      @user.destroy
+    end
+  end
 end
