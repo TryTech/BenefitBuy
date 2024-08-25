@@ -6,14 +6,7 @@ class Order < ApplicationRecord
 
   validates :status, presence: true
 
-  enum status: {
-      pending: "pending",
-      processing: "processing",
-      shipped: "shipped",
-      delivered: "delivered",
-      cancelled: "cancelled",
-      refunded: "refunded"
-    }
+  enum :status, [ :pending, :processing, :shipped, :delivered, :cancelled, :refunded ]
 
   private
 
