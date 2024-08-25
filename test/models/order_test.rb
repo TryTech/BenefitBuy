@@ -12,7 +12,7 @@ class OrderTest < ActiveSupport::TestCase
   end
 
   test "should save order with status" do
-    debugger
+    @order.status = :pending
     assert @order.save
   end
 
@@ -23,7 +23,7 @@ class OrderTest < ActiveSupport::TestCase
     order_item.save
 
     @order.order_items << order_item
-    @order.status = "pending"
+    @order.status = :pending
     @order.save
 
     assert_equal Float(20), @order.total_amount.to_f
