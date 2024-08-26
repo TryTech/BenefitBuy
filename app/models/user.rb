@@ -15,6 +15,8 @@ class User < ApplicationRecord
 
   has_many :active_sessions, dependent: :destroy
   has_many :products, dependent: :destroy
+  has_many :orders, dependent: :destroy
+  has_many :addresses, dependent: :destroy
 
   def self.authenticate_by(attributes)
     passwords, identifiers = attributes.to_h.partition do |name, value|
