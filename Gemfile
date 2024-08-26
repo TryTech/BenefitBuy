@@ -67,3 +67,7 @@ gem "css-zero", "~> 0.0.29"
 gem "bcrypt", "~> 3.1"
 
 gem "easy_translate", "~> 0.5.1"
+
+gem "pay", "~> 7.3"
+
+gem "stripe", "~> 12.5"
