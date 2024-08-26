@@ -4,6 +4,7 @@ class User < ApplicationRecord
   PASSWORD_RESET_TOKEN_EXPIRATION = 10.minutes.freeze
 
   has_secure_password
+  pay_customer stripe_attributes: :stripe_attributes
 
   attr_accessor :current_password
 
@@ -85,7 +86,20 @@ class User < ApplicationRecord
     !confirmed?
   end
 
+  def pay_should_sync_customer?
+    super || self.saved_change_to_email?
+  end
+
   private
+
+  def stripe_attributes(pay_customer)
+    {
+      metadata: {
+        user_id: id,
+        pay_customer_id: pay_customer.id
+      }
+    }
+  end
 
   def downcase_unconfirmed_email
     return if unconfirmed_email.nil?
