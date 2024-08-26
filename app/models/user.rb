@@ -4,7 +4,9 @@ class User < ApplicationRecord
   PASSWORD_RESET_TOKEN_EXPIRATION = 10.minutes.freeze
 
   has_secure_password
+
   pay_customer stripe_attributes: :stripe_attributes
+  pay_customer default_payment_processor: :stripe
 
   attr_accessor :current_password
 
