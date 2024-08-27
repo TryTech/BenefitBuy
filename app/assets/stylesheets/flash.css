@@ -1,0 +1,16 @@
+.flash {
+  animation: appear-then-fade 4s 300ms both;
+  background-color: var(--color-text);
+  border-radius: var(--rounded-full);
+  color: var(--color-text-reversed);
+  margin-block-start: var(--size-4);
+  margin-inline: auto;
+  padding: var(--size-2) var(--size-4);
+  position: fixed;
+  text-align: center;
+}
+
+@keyframes appear-then-fade {
+  0%, 100% { opacity: 0; }
+  5%, 60%  { opacity: 1; }
+}
