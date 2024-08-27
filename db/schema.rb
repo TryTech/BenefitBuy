@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_08_27_171551) do
+ActiveRecord::Schema[7.2].define(version: 2024_08_27_182011) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -92,10 +92,12 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_27_171551) do
 
   create_table "orders", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.decimal "total_amount", precision: 10, scale: 2, null: false
     t.string "status", default: "pending", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "BRL", null: false
+    t.string "checkout_session_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
