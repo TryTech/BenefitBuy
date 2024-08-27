@@ -62,7 +62,6 @@ end
 
 gem "litestack", "0.4.4"
 
-gem "css-zero", "~> 0.0.29"
 
 gem "bcrypt", "~> 3.1"
 
