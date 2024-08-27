@@ -69,3 +69,5 @@ gem "bcrypt", "~> 3.1"
 gem "easy_translate", "~> 0.5.1"
 
 gem "money-rails", "~> 1.15"
+
+gem "stripe", "~> 12.5"
