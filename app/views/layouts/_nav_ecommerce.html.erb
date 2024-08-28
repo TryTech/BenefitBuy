@@ -1,1 +1,31 @@
-teste
+<header>
+  <div id="search-container" aria-label="Main Search">
+    <%= inline_svg_tag('search', title: 'Search', id: 'search-icon', class: 'cursor-pointer') %>
+    <div id="search-box" aria-labelledby="search-icon">
+      <%= form_with url: nil, method: :get, role: 'search' do |form| %>
+        <%= form.text_field :query, placeholder: 'Search...', aria: { label: 'Search' }, id: 'search-input' %>
+        <%= form.submit 'Search', id: 'search-button' %>
+      <% end %>
+    </div>
+
+    <h2>BenefitBuy</h2>
+
+    <div aria-label="Cart">
+      <%= inline_svg_tag('cart', title: 'Cart', id: 'cart-icon', class: 'cursor-pointer') %>
+    </div>
+
+    <div aria-label="User">
+      <%= inline_svg_tag('avatar', title: 'Avatar', id: 'avatar-icon', class: 'cursor-pointer') %>
+    </div>
+  </div>
+
+  <nav aria-label="BenefitBuy Main Navigation">
+    <ul class="nav-list">
+      <li class="nav-item"><%= link_to 'Home', root_path, title: 'Home', class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'About Us', nil, title: 'About Us', class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'Services', nil, title: 'Our Services', class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'Blog', nil, title: 'Read our Blog', class: 'nav-link' %></li>
+      <li class="nav-item"><%= link_to 'Contact', nil, title: 'Contact Us', class: 'nav-link' %></li>
+    </ul>
+  </nav>
+</header>
