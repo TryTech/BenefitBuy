@@ -16,7 +16,7 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "should not save product without price" do
-    @product.price = nil
+    @product.price_cents = nil
     assert_not @product.save, "Saved the product without price"
   end
 
@@ -41,12 +41,12 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "should not save product with zero price" do
-    @product.price = 0
+    @product.price_cents = 0
     assert_not @product.save, "Saved the product with zero price"
   end
 
   test "should not save product with negative price" do
-    @product.price = -1
+    @product.price_cents = -1
     assert_not @product.save, "Saved the product with negative price"
   end
 
