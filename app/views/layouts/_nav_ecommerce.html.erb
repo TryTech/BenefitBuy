@@ -1,4 +1,4 @@
-<div data-controller="menu-mobile">
+<div data-controller="menu-mobile search">
   <header class="flex justify-between items-center p-4 bg-white shadow" role="banner">
     <div class="flex items-center space-x-4">
       <h1 class="text-xl font-bold bg-gradient-to-r from-lime-500 to-orange-500 bg-clip-text text-transparent">
@@ -11,14 +11,25 @@
     </nav>
 
     <div class="flex items-center space-x-4" aria-label="User Options">
-      <%= inline_svg_tag('search', class: 'w-6 h-6 cursor-pointer text-gray-600 hover:text-lime-500', title: 'Search', aria: { label: 'Search' }) %>
+      <%= inline_svg_tag('search', class: 'w-6 h-6 cursor-pointer text-gray-600 hover:text-lime-500', title: 'Search', aria: { label: 'Search' }, data: {action: 'click->search#openSearch'}) %>
       <%= inline_svg_tag('cart', class: 'w-6 h-6 cursor-pointer text-gray-600 hover:text-orange-500', title: 'Shopping Cart', aria: { label: 'Shopping Cart' }) %>
       <%= inline_svg_tag('avatar', class: 'w-6 h-6 cursor-pointer text-gray-600 hover:text-lime-500', title: 'User Profile', aria: { label: 'User Profile' }) %>
       <%= inline_svg_tag('menu', class: 'w-6 h-6 cursor-pointer text-gray-600 md:hidden', title: 'Menu', aria: { label: 'Menu' }, data: { action: 'click->menu-mobile#toggle' }) %>
     </div>
   </header>
 
-  <nav data-menu-mobile-target="menu" id="mobile-menu" class="hidden md:hidden p-4 bg-white shadow-md absolute inset-x-0 top-[4rem] z-50">
+  <nav data-menu-mobile-target="menu" id="mobile-menu" class="hidden md:hidden p-4 bg-white shadow-md absolute inset-x-0 top-[4rem] z-40">
     <%= navigation_links %>
   </nav>
+
+  <div data-search-target="search" class="hidden absolute inset-x-0 top-[4rem] z-50 bg-white shadow-md p-4">
+    <%= form_with url: nil, method: :get, local: true, class: "relative" do |form| %>
+      <div class="relative">
+        <%= form.text_field :query, placeholder: 'Search...', class: 'w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-lime-500' %>
+        <button type="submit" class="absolute inset-y-0 right-0 px-4 py-2 bg-lime-500 text-white rounded-r-md hover:bg-lime-600">
+          <%= inline_svg_tag('search', class: 'w-4 h-4') %>
+        </button>
+      </div>
+    <% end %>
+  </div>
 </div>
