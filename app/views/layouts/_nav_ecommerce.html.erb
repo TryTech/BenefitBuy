@@ -17,7 +17,8 @@
       <%= inline_svg_tag('menu', class: 'w-6 h-6 cursor-pointer text-gray-600 md:hidden', title: 'Menu', aria: { label: 'Menu' }, data: { action: 'click->menu-mobile#toggle' }) %>
     </div>
   </header>
-  <nav data-menu-mobile-target="menu" id="mobile-menu" class="hidden md:hidden p-4 bg-white shadow-md">
+
+  <nav data-menu-mobile-target="menu" id="mobile-menu" class="hidden md:hidden p-4 bg-white shadow-md absolute inset-x-0 top-[4rem] z-50">
     <%= navigation_links %>
   </nav>
 </div>
