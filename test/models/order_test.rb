@@ -26,7 +26,7 @@ class OrderTest < ActiveSupport::TestCase
     @order.status = :pending
     @order.save
 
-    assert_equal Float(20), @order.total_amount.to_f
+    assert_equal Float(20), @order.amount_cents.to_f
   end
 
   test "should has many order items" do

@@ -3,7 +3,7 @@
 one:
   name: MyString
   description: MyText
-  price: 1000.3
+  price_cents: 1000.3
   stock: 1
   user: one
   category: one
@@ -11,7 +11,7 @@ one:
 two:
   name: MyString
   description: MyText
-  price: 1000.3
+  price_cents: 1000.3
   stock: 1
   user: two
   category: two

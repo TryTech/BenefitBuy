@@ -42,3 +42,5 @@
 /db/**/*.sqlite3-*
 coverage
 /config/credentials/development.key
+
+/config/credentials/test.key
