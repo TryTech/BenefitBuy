@@ -1,23 +1,23 @@
-<header class="flex justify-between items-center p-4 bg-white shadow" role="banner">
-  <div class="flex items-center space-x-4">
-    <h1 class="text-xl font-bold bg-gradient-to-r from-lime-500 to-orange-500 bg-clip-text text-transparent">
-      Benefit Buy
-    </h1>
-  </div>
+<div data-controller="menu-mobile">
+  <header class="flex justify-between items-center p-4 bg-white shadow" role="banner">
+    <div class="flex items-center space-x-4">
+      <h1 class="text-xl font-bold bg-gradient-to-r from-lime-500 to-orange-500 bg-clip-text text-transparent">
+        Benefit Buy
+      </h1>
+    </div>
 
-  <nav aria-label="Primary" class="hidden md:flex space-x-6">
-    <ul class="flex space-x-6">
-      <li><%= link_to 'Home', root_path, title: 'Home', class: 'text-gray-600 hover:text-lime-500 transition-colors' %></li>
-      <li><%= link_to 'Shop', nil, title: 'Shop', class: 'text-gray-600 hover:text-orange-500 transition-colors' %></li>
-      <li><%= link_to 'About Us', nil, title: 'About Us', class: 'text-gray-600 hover:text-lime-500 transition-colors' %></li>
-      <li><%= link_to 'Contact', nil, title: 'Contact Us', class: 'text-gray-600 hover:text-orange-500 transition-colors' %></li>
-    </ul>
+    <nav aria-label="Primary" class="hidden md:flex space-x-6">
+      <%= navigation_links %>
+    </nav>
+
+    <div class="flex items-center space-x-4" aria-label="User Options">
+      <%= inline_svg_tag('search', class: 'w-6 h-6 cursor-pointer text-gray-600 hover:text-lime-500', title: 'Search', aria: { label: 'Search' }) %>
+      <%= inline_svg_tag('cart', class: 'w-6 h-6 cursor-pointer text-gray-600 hover:text-orange-500', title: 'Shopping Cart', aria: { label: 'Shopping Cart' }) %>
+      <%= inline_svg_tag('avatar', class: 'w-6 h-6 cursor-pointer text-gray-600 hover:text-lime-500', title: 'User Profile', aria: { label: 'User Profile' }) %>
+      <%= inline_svg_tag('menu', class: 'w-6 h-6 cursor-pointer text-gray-600 md:hidden', title: 'Menu', aria: { label: 'Menu' }, data: { action: 'click->menu-mobile#toggle' }) %>
+    </div>
+  </header>
+  <nav data-menu-mobile-target="menu" id="mobile-menu" class="hidden md:hidden p-4 bg-white shadow-md">
+    <%= navigation_links %>
   </nav>
-
-  <div class="flex items-center space-x-4" aria-label="User Options">
-    <%= inline_svg_tag('search', class: 'w-6 h-6 cursor-pointer text-gray-600 hover:text-lime-500', title: 'Search', aria: { label: 'Search' }) %>
-    <%= inline_svg_tag('cart', class: 'w-6 h-6 cursor-pointer text-gray-600 hover:text-orange-500', title: 'Shopping Cart', aria: { label: 'Shopping Cart' }) %>
-    <%= inline_svg_tag('avatar', class: 'w-6 h-6 cursor-pointer text-gray-600 hover:text-lime-500', title: 'User Profile', aria: { label: 'User Profile' }) %>
-    <%= inline_svg_tag('menu', class: 'w-6 h-6 cursor-pointer text-gray-600 md:hidden', title: 'Menu', aria: { label: 'Menu' }) %>
-  </div>
-</header>
+</div>
