@@ -1,5 +1,14 @@
 ---
 pt-BR:
+  search: Pesquisar
+  shopping_cart: Carrinho de compras
+  user_profile: Perfil do usuário
+  search_placeholder: Pesquisar ...
+  menu: Menu
+  home: Home
+  shop: Loja
+  about: Sobre
+  contact: Contato
   active_sessions:
     destroy:
       success: Sessão destruída.

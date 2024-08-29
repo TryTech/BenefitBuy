@@ -1,10 +1,10 @@
 module ApplicationHelper
   def navigation_links
     links = [
-      { name: "Home", path: root_path, hover_class: "hover:text-lime-500" },
-      { name: "Shop", path: nil, hover_class: "hover:text-orange-500" },
-      { name: "About Us", path: nil, hover_class: "hover:text-lime-500" },
-      { name: "Contact", path: nil, hover_class: "hover:text-orange-500" }
+      { name: I18n.t("home"), path: root_path, hover_class: "hover:text-lime-500" },
+      { name: I18n.t("shop"), path: nil, hover_class: "hover:text-orange-500" },
+      { name: I18n.t("about"), path: nil, hover_class: "hover:text-lime-500" },
+      { name: I18n.t("contact"), path: nil, hover_class: "hover:text-orange-500" }
     ]
 
     content_tag(:ul, class: "space-y-4 md:space-y-0 md:flex md:space-x-6") do

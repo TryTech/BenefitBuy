@@ -1,5 +1,14 @@
 ---
 en:
+  search: Search
+  shopping_cart: Shopping Cart
+  user_profile: User Profile
+  search_placeholder: Search ...
+  menu: Menu
+  home: Home
+  shop: Shop
+  about: About
+  contact: Contact
   active_sessions:
     destroy:
       success: Session destroyed.
