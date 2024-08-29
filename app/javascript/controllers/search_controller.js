@@ -16,12 +16,12 @@ export default class extends Controller {
       this.searchTarget.classList.remove('animate__fadeInDown');
       this.searchTarget.classList.add('animate__fadeOutUp');
       
-      this.searchTarget.addEventListener('animationend', this.__handleAnimationEnd.bind(this), { once: true });
+      this.searchTarget.addEventListener('animationend', this._handleAnimationEnd.bind(this), { once: true });
 
     }
   }
 
-  __handleAnimationEnd() {
+  _handleAnimationEnd() {
     if (this.searchTarget.classList.contains('animate__fadeOutUp')) {
       this.searchTarget.classList.add('hidden');
     }
