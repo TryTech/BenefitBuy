@@ -1,17 +1,17 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="cart"
+// Connects to data-controller="user-options"
 export default class extends Controller {
-  static targets = ["cart"]
+  static targets = ["options"]
 
   connect() {
     this.handleClickOutside = this.handleClickOutside.bind(this)
   }
 
-  handleCart() {
-    this.cartTarget.classList.toggle('hidden')
+  openOptions() {
+    this.optionsTarget.classList.toggle('hidden')
 
-    if (!this.cartTarget.classList.contains('hidden')) {
+    if (!this.optionsTarget.classList.contains('hidden')) {
       document.addEventListener('click', this.handleClickOutside)
     } else {
       document.removeEventListener('click', this.handleClickOutside)
@@ -20,7 +20,7 @@ export default class extends Controller {
 
   handleClickOutside(event) {
     if (!this.element.contains(event.target)) {
-      this.cartTarget.classList.add('hidden')
+      this.optionsTarget.classList.add('hidden')
       document.removeEventListener('click', this.handleClickOutside)
     }
   }
