@@ -71,4 +71,4 @@ gem "money-rails", "~> 1.15"
 
 gem "stripe", "~> 12.5"
 
-gem "inline_svg", "~> 1.9"
+gem "inline_svg", "~> 1.10"
