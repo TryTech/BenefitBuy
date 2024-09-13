@@ -69,6 +69,6 @@ gem "easy_translate", "~> 0.5.1"
 
 gem "money-rails", "~> 1.15"
 
-gem "stripe", "~> 12.5"
+gem "stripe", "~> 12.6"
 
 gem "inline_svg", "~> 1.9"
